@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoemHeals</title>
+    
+    <!-- Link to our CSS file for styling -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Zeyada&display=swap" rel="stylesheet">
+    
+    <!-- Link to our JavaScript file, 'defer' makes it load after the HTML -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="welcome-text">WELCOME TO</div>
+            
+            <!-- Desktop Navigation (visible on larger screens) -->
+            <nav class="desktop-nav">
+                <a href="#">Login</a>
+                <a href="#">Author</a>
+                <a href="#">About Us</a>
+            </nav>
+
+            <!-- Hamburger Icon (visible on smaller screens) -->
+            <div class="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation (hidden by default, toggled by JS) -->
+        <nav class="mobile-nav">
+            <a href="#">Login</a>
+            <a href="#">Author</a>
+            <a href="#">About Us</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section: The first thing users see -->
+        <section class="hero-section">
+            <h1 class="main-title">
+                <!-- The word "POEM" -->
+                <span class="title-poem">
+                    <span>P</span><span>O</span><span>E</span><span>M</span>
+                </span>
+                <!-- The word "heals" in a script font -->
+                <span class="title-heals">heals</span>
+            </h1>
+            <p class="subtitle">WHERE POEMS <span class="subtitle-heal">heal</span> YOU</p>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section animate-on-scroll">
+            <div class="about-image">
+                <!-- Replace this with your actual image path -->
+                <img src="https://i.imgur.com/gT7C4xH.jpeg" alt="Bhawna Jaiswal in the mountains">
+            </div>
+            <div class="about-text">
+                <h2>hey there!</h2>
+                <p>
+                    I'm Bhawna Jaiswal, the voice behind Poem Heals. Over the years, I've poured my heart into poetry — words that heal, comfort, and connect. What started as a few verses has now reached over a million beautiful souls like you.
+                </p>
+                <p>
+                    This space is a quiet corner of the internet where my poems come alive as audiobooks — created with love, meant to be felt. I hope these words find you when you need them the most.
+                </p>
+            </div>
+        </section>
+
+        <!-- Audiobook CTA Section -->
+        <section class="audiobook-section animate-on-scroll">
+            <div class="audiobook-card">
+                <h3>Audiobook</h3>
+                <div class="audiobook-image">
+                     <!-- Replace this with your actual image path -->
+                    <img src="https://i.imgur.com/W22gYwZ.png" alt="Portrait of Bhawna Jaiswal">
+                </div>
+                <p>Get access by clicking below</p>
+                <a href="#" class="access-button"></a>
+            </div>
+        </section>
+
+        <!-- Socials Section -->
+        <section class="socials-section animate-on-scroll">
+            <div class="socials-image">
+                <!-- Replace this with your social media screenshot -->
+                <img src="https://i.imgur.com/2Y4kQ2s.png" alt="PoemHeals Instagram Profile">
+            </div>
+            <div class="socials-text">
+                <h2>MY SOCIALS</h2>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 PoemHeals. Created with love.</p>
+    </footer>
+
+</body>
+</html>

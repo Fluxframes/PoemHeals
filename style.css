@@ -1,0 +1,339 @@
+/* --- CSS Variables --- */
+/* Using variables makes it easy to change colors and fonts later */
+:root {
+  --color-yellow: #FBCF4B;
+  --color-beige: #FFFBF0;
+  --color-text: #333333;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-script: 'Zeyada', cursive;
+}
+
+/* --- Basic Reset & Body Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  background-color: var(--color-beige);
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Header --- */
+header {
+  background-color: var(--color-yellow);
+  padding: 20px;
+  position: relative; /* Needed for positioning mobile nav */
+  z-index: 10;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.welcome-text {
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.menu-icon {
+  cursor: pointer;
+}
+
+.menu-icon .bar {
+  width: 30px;
+  height: 3px;
+  background-color: var(--color-text);
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hamburger animation to 'X' */
+.menu-icon.is-open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-icon.is-open .bar:nth-child(2) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+  display: none; /* Hidden on mobile by default */
+  gap: 40px;
+}
+
+.desktop-nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect: underline grows from the center */
+.desktop-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--color-text);
+  transition: width 0.3s ease;
+}
+
+.desktop-nav a:hover::after {
+  width: 100%;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fcd96c; /* Slightly different yellow */
+  position: absolute;
+  top: 73px; /* Position below header */
+  left: 0;
+  width: 100%;
+  /* Hide off-screen */
+  transform: translateY(-150%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.mobile-nav.is-open {
+  transform: translateY(0); /* Slide into view */
+}
+
+.mobile-nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 700;
+  padding: 20px 0;
+  font-size: 1.2rem;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.mobile-nav a:hover {
+  background-color: var(--color-yellow);
+}
+
+
+/* --- Hero Section --- */
+.hero-section {
+  background-color: var(--color-yellow);
+  padding: 60px 20px 80px;
+  overflow: hidden; /* Hides elements before they animate in */
+}
+
+.main-title {
+  font-size: 10vw; /* Responsive font size */
+  font-weight: 700;
+  position: relative; /* Needed for positioning the 'heals' text */
+  display: inline-block; /* Allows positioning */
+  margin-bottom: 20px;
+}
+
+/* Styling for "POEM" */
+.title-poem {
+  display: inline-block;
+}
+
+/* Main Text Animation: Each letter of "POEM" will fade and slide in */
+.title-poem span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInSlideUp 1s forwards;
+}
+
+/* Stagger the animation for each letter */
+.title-poem span:nth-child(1) { animation-delay: 0.2s; }
+.title-poem span:nth-child(2) { animation-delay: 0.3s; }
+.title-poem span:nth-child(3) { animation-delay: 0.4s; }
+.title-poem span:nth-child(4) { animation-delay: 0.5s; }
+
+
+/* Styling for "heals" */
+.title-heals {
+  font-family: var(--font-script);
+  font-size: 12vw; /* Larger, scripty font */
+  position: absolute;
+  bottom: -20px;
+  right: -40px;
+  color: white;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInSlideUp 1s 0.8s forwards; /* Delay this animation */
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInSlideUp 1s 1.2s forwards; /* Delay this animation */
+}
+
+.subtitle-heal {
+  font-family: var(--font-script);
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+/* --- About Section --- */
+.about-section {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  align-items: center;
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.about-image, .about-text {
+  flex: 1; /* Each takes up half the space */
+  min-width: 300px; /* Minimum width before wrapping */
+}
+
+.about-text {
+  text-align: left;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* --- Audiobook Section --- */
+.audiobook-section {
+  padding: 40px 20px;
+}
+
+.audiobook-card {
+  background-color: var(--color-yellow);
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.audiobook-card h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.audiobook-image {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.audiobook-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.audiobook-card p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.access-button {
+  display: inline-block;
+  width: 80px;
+  height: 10px;
+  background-color: var(--color-text);
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.access-button:hover {
+  transform: scale(1.1);
+}
+
+/* --- Socials Section --- */
+.socials-section {
+  display: flex;
+  flex-wrap: wrap-reverse; /* Image appears after text on small screens */
+  align-items: center;
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.socials-image, .socials-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.socials-text h2 {
+  font-size: 3rem;
+}
+
+/* --- Footer --- */
+footer {
+  padding: 40px 20px;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+
+/* --- Animation Keyframes --- */
+@keyframes fadeInSlideUp {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* --- Scroll Animation Classes --- */
+/* Class to hide elements before they are animated */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Class to show elements when they scroll into view */
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Media Query for Responsiveness --- */
+@media (min-width: 768px) {
+  .menu-icon {
+      display: none; /* Hide hamburger on desktop */
+  }
+  .desktop-nav {
+      display: flex; /* Show desktop nav */
+  }
+}
