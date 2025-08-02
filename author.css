@@ -1,0 +1,106 @@
+:root {
+  --color-yellow: #FBCF4B;
+  --color-beige: #FFFBF0;
+  --color-text: #333333;
+  --font-heading: 'Merriweather Sans', sans-serif;
+  --font-script: 'Zeyada', cursive;
+  --font-otherTexts: 'Outfit', sans-serif;
+}
+
+/* Body */
+#author-body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-otherTexts);
+  background-color: var(--color-beige);
+  color: var(--color-text);
+}
+
+/* Header */
+#author-header {
+  background-color: var(--color-yellow);
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+#author-brand {
+  font-family: var(--font-script);
+  font-size: 2.8rem;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* Intro Section */
+#author-intro {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+#author-intro h2 {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  font-family: var(--font-heading);
+  color: var(--color-text);
+}
+
+#author-intro p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 1rem 0;
+  color: var(--color-text);
+}
+
+/* Stats Section */
+#author-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+  background-color: var(--color-text);
+  text-align: center;
+}
+
+#author-stats .stat {
+  flex: 1 1 200px;
+}
+
+#author-stats h3 {
+  font-size: 2rem;
+  color: var(--color-beige);
+  font-family: var(--font-heading);
+}
+
+#author-stats p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: var(--color-beige);
+}
+
+/* Footer */
+#author-footer {
+  background-color: var(--color-yellow);
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  font-family: var(--font-otherTexts);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #author-header {
+    padding: 1rem;
+  }
+
+  #author-intro {
+    padding: 1.5rem 1rem;
+  }
+
+  #author-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+}
